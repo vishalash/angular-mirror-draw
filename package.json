@@ -1,6 +1,6 @@
 {
   "name": "draw",
-  "version": "1",
+  "version": "2",
   "author": "Vishal Ash",
   "scripts": {
     "ng": "ng",

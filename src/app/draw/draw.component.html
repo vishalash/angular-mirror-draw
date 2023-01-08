@@ -1,9 +1,8 @@
 <div class="col-sm-12" style="border: 1px ridge gray;">
   <div class="row">
-    <div style="height: 45vh;" (mousedown)="startDrawing($event)" (mousemove)="drawLine($event)"
-      (mouseup)="stopDrawing($event)" (keydown)="clearCanvas($event)">
-      <!-- <input type="text" name="" id="" [(ngModel)]="inputValue" (ngModelChange)="inputChanged()">
-            {{inputValue}} -->
+    <div style="height: 45vh;" (mousedown)="startDrawing($event)" (touchstart)="startDrawing($event)"
+      (mousemove)="drawLine($event)" (touchmove)="drawLine($event)" (mouseup)="stopDrawing($event)"
+      (touchend)="stopDrawing($event)" (keydown)="clearCanvas($event)">
       <canvas id="drawPlace" width="800px" height="300px" #myCanvas></canvas>
     </div>
   </div>

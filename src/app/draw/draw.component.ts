@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class DrawComponent implements OnInit, AfterViewInit {
 
-  inputValue: string = "";
   @ViewChild('myCanvas') myCanvas!: ElementRef;
 
   constructor(private drawService: DrawService) { }
@@ -23,19 +22,10 @@ export class DrawComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.inputValue = this.drawService.getInput();
-    this.drawService.inputChanged.subscribe(value => {
-      this.inputValue = value;
-    })
     this.drawService.canvasChanged.subscribe((value: any) => {
       const imageData = value.getContext("2d").getImageData(0, 0, value.width, value.height);
       this.paper.putImageData(imageData, 0, 0);
     })
-  }
-
-
-  inputChanged() {
-    this.drawService.setInput(this.inputValue);
   }
 
   square: any;
