@@ -10,6 +10,5 @@ import { DrawComponent } from './draw/draw.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'draw';
-  repeatCount = 4;
+  title = 'Mirror Draw';
 }
